@@ -19,8 +19,8 @@ jobs:
       - name: dependencies
         run: npm install --legacy-peer-deps
 
-      - name: build web
-        run: npm run build-ota
+      # - name: build web
+      #   run: npm run build-ota
 
       - id: currentVersion
         name: Get latest release

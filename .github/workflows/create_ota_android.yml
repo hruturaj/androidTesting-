@@ -47,10 +47,10 @@ jobs:
       - name: printing patch
         run: echo ${{ steps.nextVersion.outputs.patch }}
 
-      - name: printing minor
+      - name: printing minor version
         run: echo ${{ steps.nextVersion.outputs.minor }}
 
-      - name: printing major
+      - name: printing major version
         run: echo ${{ steps.nextVersion.outputs.major }}
 
       - name: create release

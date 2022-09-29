@@ -1,0 +1,62 @@
+name: Create OTA Release
+
+on: [pull_request]
+
+jobs:
+  create_ota_release:
+    runs-on: self-hosted
+
+    steps:
+      - name: git checkout
+        uses: actions/checkout@v3
+
+      - name: set up Node 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "npm"
+
+      - name: dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: build web
+        run: npm run build-ota
+
+      - id: currentVersion
+        name: Get latest release
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          repository: hruturaj/androidTesting-
+          excludes: prerelease, draft
+
+      - name: printing currentVersion
+        run: echo ${{ steps.currentVersion.outputs.release }}
+
+      - id: nextVersion
+        name: Get next patch version
+        uses: "WyriHaximus/github-action-next-semvers@v1"
+        with:
+          version: ${{ steps.currentVersion.outputs.release }}
+
+      - name: zip
+        uses: vimtor/action-zip@v1
+        with:
+          files: dist/
+          dest: "dist-${{ steps.nextVersion.outputs.patch }}.zip"
+
+      - name: printing patch
+        run: echo ${{ steps.nextVersion.outputs.patch }}
+
+      - name: printing minor
+        run: echo ${{ steps.nextVersion.outputs.minor }}
+
+      - name: printing major
+        run: echo ${{ steps.nextVersion.outputs.major }}
+
+      - name: create release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: "${{ steps.nextVersion.outputs.patch }}"
+          repo: ${{ secrets.ANDROID_IOS_RELEASE_PUBLIC_REPO_NAME }}
+          artifacts: "dist-${{ steps.nextVersion.outputs.patch }}.zip"
+          token: ${{ secrets.ANDROID_IOS_RELEASE_PUBLIC_REPO_TOKEN }}

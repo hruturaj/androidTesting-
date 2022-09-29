@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "59915972118",
+    "project_id": "amazing-chalice-320619",
+    "storage_bucket": "amazing-chalice-320619.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59915972118:android:46c87b52efc8a6b6e78f37",
+        "android_client_info": {
+          "package_name": "com.trading.algobulls"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59915972118-3hqc965ull3jnnlqkc3mg9lhoo39fkfj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCl8ipPa5gidabQtJX8B8wqgvHEHMaHpBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59915972118-3hqc965ull3jnnlqkc3mg9lhoo39fkfj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AlgoBulls</string>
+    <string name="title_activity_main">AlgoBulls</string>
+    <string name="package_name">com.trading.algobulls</string>
+    <string name="custom_url_scheme">com.trading.algobulls</string>
+    <string name="server_client_id">59915972118-3hqc965ull3jnnlqkc3mg9lhoo39fkfj.apps.googleusercontent.com</string>
+    <string name="default_push_notification_channel_id">push</string>
+    <color name="push_notification_icon_color">#2C78F6</color>
+    <color name="white">#FFFFFF</color>
+</resources>

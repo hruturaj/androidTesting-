@@ -1,0 +1,39 @@
+{
+	"appId": "com.trading.algobulls",
+	"appName": "AlgoBulls",
+	"webDir": "dist",
+	"bundledWebRuntime": false,
+	"server": {
+		"hostname": "app.algobulls.com",
+		"androidScheme": "https"
+	},
+	"plugins": {
+		"GoogleAuth": {
+			"scopes": [
+				"profile",
+				"email"
+			],
+			"serverClientId": "59915972118-3hqc965ull3jnnlqkc3mg9lhoo39fkfj.apps.googleusercontent.com",
+			"forceCodeForRefreshToken": false
+		},
+		"LocalNotifications": {
+			"smallIcon": "ic_stat_icon",
+			"iconColor": "#2C78F6"
+		},
+		"PushNotifications": {
+			"presentationOptions": [
+				"badge",
+				"sound",
+				"alert"
+			]
+		},
+		"SplashScreen": {
+			"launchShowDuration": 0,
+			"launchAutoHide": true,
+			"androidScaleType": "CENTER",
+			"splashFullScreen": true,
+			"splashImmersive": false,
+			"backgroundColor": "#ffffff"
+		}
+	}
+}
